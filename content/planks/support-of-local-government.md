@@ -1,0 +1,9 @@
+---
+title: Support of Local Government
+weight: 16
+date: 2025-01-01
+layout: single
+original: "Local governments allow for greater community involvement and are most aware of the needs of the people. Federal regulations of state and local governments should be restricted to powers specifically enumerated in the Constitution of the United States."
+updated: "Local governments allow for greater community involvement and are most aware of the needs of the people. Federal regulations of state and local governments should be restricted to powers specifically enumerated in the Constitution of the United States. **We uphold the principle of the lesser magistrates and when unalienable rights are infringed upon, all levels of government are responsible to protect and defend against usurpations. Local municipalities, also known as political subdivisions, should have the right to dictate their planning and zoning, business regulation, and infrastructure. (Bill of Rights: 9th Amendment. Utah Constitution: Article I, Section 1; Article VI, Section 28; Article XI, Section 6)**"
+final: "Local governments allow for greater community involvement and are most aware of the needs of the people. Federal regulations of state and local governments should be restricted to powers specifically enumerated in the Constitution of the United States. We uphold the principle of the lesser magistrates and when unalienable rights are infringed upon, all levels of government are responsible to protect and defend against usurpations. Local municipalities, also known as political subdivisions, should have the right to dictate their planning and zoning, business regulation, and infrastructure. (Bill of Rights: 9th Amendment. Utah Constitution: Article I, Section 1; Article VI, Section 28; Article XI, Section 6)"
+---

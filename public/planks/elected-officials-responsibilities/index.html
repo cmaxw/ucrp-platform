@@ -1,0 +1,242 @@
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elected Officials’ Responsibilities | Utah County Republican Party Proposed Platform</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  </head>
+  <body class="bg-gray-50 font-sans antialiased">
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><header class="fixed top-0 left-0 w-full bg-red-900 text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <a href="/" class="text-xl font-bold tracking-tight">UCRP Platform</a>
+      
+      <nav class="hidden md:flex space-x-6">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+      
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+      <nav class="flex flex-col space-y-2 px-4 py-3">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+    </div>
+  </header>
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+    <main class="container mx-auto px-4 pt-20 pb-8 min-h-screen">
+      
+<h1 class="text-3xl font-bold mb-4">Elected Officials’ Responsibilities</h1>
+
+
+
+
+<h2 class="text-xl font-semibold mt-6">Original Plank</h2>
+<p class="bg-gray-200 p-4 rounded"></p>
+<h2 class="text-xl font-semibold mt-6">Proposed Changes</h2>
+<div class="bg-gray-200 p-4 rounded"><strong>It is the responsibility of an elected official, who holds and casts any vote, to honor their oath and do so with the utmost understanding of the consequences. Their power to vote on behalf of their constituents has been given with the highest fidelity, and proactive input on specific legislation or ordinances from constituents should be equal to or greater than other stakeholders. The default vote should always be a “No” vote. To move from a “No” vote to a “Yes” vote should be difficult and require fully reading the proposed legislation, with a clear case that the citizenry who entrusted them will benefit–and not lobbyists or special interests. It is the responsibility of a legislator to only propose and vote on single subject–and not single category–bills. Legislators should sponsor and floor sponsor as few bills as possible and should fully understand those bills. If a vote was taken in error, it is the responsibility of the elected official to correct the error and continue efforts to right the wrong until rectified. A vote in favor of legislation is tantamount to entering into a contract on your constituents behalf. Elected officials should continue their education in the principles outlined in our founding documents. Accessibility, coordination, and communication with Party leadership is both the responsibility of Party leadership and any representatives that represent constituents in all or part of Utah County. (Utah Constitution: Article VI, Sections 22, Article VIII, Section 2)</strong></div>
+<h2 class="text-xl font-semibold mt-6">Proposed Final Version</h2>
+<div class="bg-gray-200 p-4 rounded">It is the responsibility of an elected official, who holds and casts any vote, to honor their oath and do so with the utmost understanding of the consequences. Their power to vote on behalf of their constituents has been given with the highest fidelity, and proactive input on specific legislation or ordinances from constituents should be equal to or greater than other stakeholders. The default vote should always be a “No” vote. To move from a “No” vote to a “Yes” vote should be difficult and require fully reading the proposed legislation, with a clear case that the citizenry who entrusted them will benefit–and not lobbyists or special interests. It is the responsibility of a legislator to only propose and vote on single subject–and not single category–bills. Legislators should sponsor and floor sponsor as few bills as possible and should fully understand those bills. If a vote was taken in error, it is the responsibility of the elected official to correct the error and continue efforts to right the wrong until rectified. A vote in favor of legislation is tantamount to entering into a contract on your constituents behalf. Elected officials should continue their education in the principles outlined in our founding documents. Accessibility, coordination, and communication with Party leadership is both the responsibility of Party leadership and any representatives that represent constituents in all or part of Utah County. (Utah Constitution: Article VI, Sections 22, Article VIII, Section 2)</div>
+<h2 class="text-xl font-semibold mt-6">Discussion</h2>
+<div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ucrp-proposed-platform.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </main>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><footer class="bg-gray-800 text-white py-4 text-center">
+    <div class="container mx-auto px-4">
+      <p>© 2025 Utah County Republican Party</p>
+    </div>
+  </footer>
+  </body>
+  </html>

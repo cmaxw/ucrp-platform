@@ -1,0 +1,25 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Utah County Republican Party Proposed Platform"
+disqusShortname = "ucrp-platform" # Replace with your Disqus shortname
+
+[params]
+  description = "Proposed platform for the Utah County Republican Party"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "Platform"
+  url = "/platform/"
+  weight = 2
+[[menu.main]]
+  name = "FAQ"
+  url = "/faq/"
+  weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

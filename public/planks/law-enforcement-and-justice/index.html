@@ -1,0 +1,242 @@
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Law Enforcement and Justice | Utah County Republican Party Proposed Platform</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  </head>
+  <body class="bg-gray-50 font-sans antialiased">
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><header class="fixed top-0 left-0 w-full bg-red-900 text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <a href="/" class="text-xl font-bold tracking-tight">UCRP Platform</a>
+      
+      <nav class="hidden md:flex space-x-6">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+      
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+      <nav class="flex flex-col space-y-2 px-4 py-3">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+    </div>
+  </header>
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+    <main class="container mx-auto px-4 pt-20 pb-8 min-h-screen">
+      
+<h1 class="text-3xl font-bold mb-4">Law Enforcement and Justice</h1>
+
+
+
+
+<h2 class="text-xl font-semibold mt-6">Original Plank</h2>
+<p class="bg-gray-200 p-4 rounded">Law enforcement agencies and the judiciary should strictly uphold the law in the exercise of their duties and work with citizens to maintain safe communities. The federal and state constitutions supersede all laws and it is the responsibility of these agencies to fully know and understand these documents. Constitutional examinations for law enforcement, appointed judges, and federal and local legislators should be required. (Utah Constitution: Article I, Sections 2, &amp; 26; Article 4, Section 10)</p>
+<h2 class="text-xl font-semibold mt-6">Proposed Changes</h2>
+<div class="bg-gray-200 p-4 rounded">Law enforcement agencies and the judiciary should strictly uphold the law in the exercise of their duties and work with citizens to maintain safe communities. <strong>The federal and state constitutions supersede all laws and it is the responsibility of these agencies to fully know and understand these documents. Constitutional examinations for law enforcement, appointed judges, and federal and local legislators should be required. (Utah Constitution: Article I, Sections 2, &amp; 26; Article 4, Section 10)</strong></div>
+<h2 class="text-xl font-semibold mt-6">Proposed Final Version</h2>
+<div class="bg-gray-200 p-4 rounded">Law enforcement agencies and the judiciary should strictly uphold the law in the exercise of their duties and work with citizens to maintain safe communities. The federal and state constitutions supersede all laws and it is the responsibility of these agencies to fully know and understand these documents. Constitutional examinations for law enforcement, appointed judges, and federal and local legislators should be required. (Utah Constitution: Article I, Sections 2, &amp; 26; Article 4, Section 10)</div>
+<h2 class="text-xl font-semibold mt-6">Discussion</h2>
+<div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ucrp-proposed-platform.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </main>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><footer class="bg-gray-800 text-white py-4 text-center">
+    <div class="container mx-auto px-4">
+      <p>© 2025 Utah County Republican Party</p>
+    </div>
+  </footer>
+  </body>
+  </html>

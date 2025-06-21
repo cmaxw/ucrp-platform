@@ -1,0 +1,20 @@
+{
+  "name": "ucrp-platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.14"
+  },
+  "scripts": {
+    "css:build": "postcss static/styles/tailwind.css -o static/styles/index.css",
+    "css:watch": "postcss static/styles/tailwind.css -o static/styles/index.css --watch",
+    "start": "hugo server -D & yarn css:watch",
+    "build": "hugo --gc --minify && yarn css:build"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+---
+title: Right to Data Privacy
+weight: 9
+date: 2025-01-01
+layout: single
+original: ""
+updated: "**Individuals have a fundamental right to privacy and control over their data; which includes: purchases, behaviors, personally identifiable information (PII)–including DNA. Individuals should be secure in their own–and their dependents’--persons, property, and communications. PII collected by government or corporations must be used solely for its intended purpose. The scope and use of data collected by devices or programs must be transparent and subject to the owner's fully-informed consent. Individuals have rights over their data, including ownership, usage, updates, security, portability, privacy and destruction; as well as, transparency in algorithms and legal protections. Personal data is property and cannot be taken without consent: violations must have legal recourse. (Bill of Rights: 4th Amendment. Utah Constitution: Article I, Sections 7 & 22. Utah Code 53G-6-803: Parental rights)**"
+final: "Individuals have a fundamental right to privacy and control over their data; which includes: purchases, behaviors, personally identifiable information (PII)–including DNA. Individuals should be secure in their own–and their dependents’--persons, property, and communications. PII collected by government or corporations must be used solely for its intended purpose. The scope and use of data collected by devices or programs must be transparent and subject to the owner's fully-informed consent. Individuals have rights over their data, including ownership, usage, updates, security, portability, privacy and destruction; as well as, transparency in algorithms and legal protections. Personal data is property and cannot be taken without consent: violations must have legal recourse. (Bill of Rights: 4th Amendment. Utah Constitution: Article I, Sections 7 & 22. Utah Code 53G-6-803: Parental rights)"
+---

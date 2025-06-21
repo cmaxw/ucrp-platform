@@ -1,0 +1,255 @@
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+  <html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.147.8">
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Utah County Republican Party Platform | Utah County Republican Party Proposed Platform</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  </head>
+  <body class="bg-gray-50 font-sans antialiased">
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><header class="fixed top-0 left-0 w-full bg-red-900 text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <a href="/" class="text-xl font-bold tracking-tight">UCRP Platform</a>
+      
+      <nav class="hidden md:flex space-x-6">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+      
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+      <nav class="flex flex-col space-y-2 px-4 py-3">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+    </div>
+  </header>
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+    <main class="container mx-auto px-4 pt-20 pb-8 min-h-screen">
+      
+<h1 class="text-3xl font-bold mb-4">Welcome to the Utah County Republican Party Platform</h1>
+<p>This site presents a proposed platform for the Utah County Republican Party, including core principles and policy positions. Explore our <a href="/platform/" class="text-blue-600 hover:underline">platform</a>
+, individual planks, and <a href="/faq/" class="text-blue-600 hover:underline">FAQs</a>
+ to learn more.</p>
+<h1 class="text-3xl font-bold text-gray-800">Letter from the Platform Sponsors</h1>
+<p>February 16, 2025<br>
+Dear UCRP Constitution and Bylaws Committee,</p>
+<p>We submit this alternate Utah County Republican Party Platform to the Utah County Republican Party Constitution and Bylaws Committee and realize that its significant additions, multiple rephrasings, and clarifying changes may be better received with an explanation. Here is that explanation:</p>
+<p>The original intention was to update a section or two of the platform that were very much outdated–the last update being fourteen years ago in 2011–considering what Utah County Republican Members are encountering in 2025. Our hope was to make those corrections quickly and get them to you in January. As we began these corrections, a handful of experiences and conversations happened: gratitude for the original writers who did so well encapsulating founding principles into the planks; a need for references to tie our platform back to founding documents and state documents; the desire to include a handful of subjects omitted due to lower significance at the time; and the clear and prioritizing necessity to proclaim in our platform issues, perspectives, and terms that are more timely to our current moment in history.</p>
+<p>This effort has been made as quickly as possible to make it to the March 15th Central Committee Meeting and the 2025 Organizing Convention for consideration by the county delegates. We realize that taking the platform plank by plank for approval could be a long process; instead <strong>our intention is that the consideration of this platform, as a whole, be considered, not as a perfect replacement, but as a good, better, best replacement for our county.</strong> As future additions and changes can be made when imperfections or better wording is found, we feel strongly that approval of this platform as the standard for vetting our candidates and judging current and future legislation would be more beneficial than delaying its adoption.</p>
+<p>Items that have been added that are pertinent and urgent to the state of our state include:</p>
+<ul>
+<li>Freedom of Speech</li>
+<li>Social Media</li>
+<li>Data Privacy</li>
+<li>Medical Freedom</li>
+<li>Freedom to Travel</li>
+<li>Separation of Powers</li>
+<li>Right to Association and Assembly</li>
+<li>Ethics and Conflicts of Interest</li>
+<li>Elected Officials’ Responsibilities</li>
+<li>Parental Rights</li>
+<li>Energy and Environment</li>
+<li>Consumer Rights</li>
+<li>Asset Forfeiture</li>
+<li>Precedent</li>
+<li>Land, Natural Resources, and Water</li>
+<li>Food Rights</li>
+<li>Corporate Personhood</li>
+<li>Housing Jurisdiction</li>
+</ul>
+<p>As Utah and Utah County are confronting new societal, technological, corporate, and governmental issues our platform is needing to address these changes. If we exist to get our platform into governance, then it is of the highest priority to ensure that our UCRP Platform is a more precise, encompassing reflection of what we stand for and can be used to guard our representative form of government for generations to come.</p>
+<p>Thank you for your consideration and your time and contributions to the Constitution and Bylaws Committee.</p>
+<p>Sincerely,<br>
+Cristy Henshaw, Keri Guinn, Wendy Hart, Stephanie Whyte, Charles Wood, Mike Carpenter, Mark Cluff, Brooks Benson</p>
+
+
+
+
+
+    </main>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><footer class="bg-gray-800 text-white py-4 text-center">
+    <div class="container mx-auto px-4">
+      <p>© 2025 Utah County Republican Party</p>
+    </div>
+  </footer>
+  </body>
+  </html>

@@ -1,0 +1,9 @@
+---
+title: Proper Form of Government
+weight: 25
+layout: single
+date: 2025-01-01
+original: "The United States of America is a Compound Constitutional Republic based on the rule of law, representatives elected by sovereign citizens to exercise authority on their behalf, and a system of internal and external checks and balances. The Utah caucus system is in alignment with representative government and guards against the dangers inherent in direct democracies. Political Parties have the right to select their nominees through their own processes: we oppose any efforts to subvert these rights. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Sections 1 & 2; Article VI, Section 1)"
+updated: "The United States of America is a Compound Constitutional Republic based on the rule of law, representatives elected by sovereign citizens to exercise authority on their behalf, and a system of internal and external checks and balances. **The Utah caucus system is in alignment with representative government and guards against the dangers inherent in direct democracies. Political Parties have the right to select their nominees through their own processes: we oppose any efforts to subvert these rights. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Sections 1 & 2; Article VI, Section 1)**"
+final: "The United States of America is a Compound Constitutional Republic based on the rule of law, representatives elected by sovereign citizens to exercise authority on their behalf, and a system of internal and external checks and balances. The Utah caucus system is in alignment with representative government and guards against the dangers inherent in direct democracies. Political Parties have the right to select their nominees through their own processes: we oppose any efforts to subvert these rights. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Sections 1 & 2; Article VI, Section 1)"
+---

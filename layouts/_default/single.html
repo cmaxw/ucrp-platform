@@ -1,0 +1,43 @@
+{{ define "main" }}
+<h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+{{ .Content }}
+{{ if eq .Title "Full Platform" }}
+  {{ range (where .Site.RegularPages "Section" "planks").ByWeight }}
+    <h2 class="text-xl font-semibold mt-6">
+      {{- .Title }} 
+      <span class="text-sm font-normal"><a href="{{ .RelPermalink }}" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2>
+    {{- with .Params.final }} {{ . }}{{ end }}
+  </li>
+  {{ end }}
+{{ end }}
+
+{{ if .Params.final }}
+<h2 class="text-xl font-semibold mt-6">Original Plank</h2>
+<p class="bg-gray-200 p-4 rounded">{{ .Params.original }}</p>
+<h2 class="text-xl font-semibold mt-6">Proposed Changes</h2>
+<div class="bg-gray-200 p-4 rounded">{{ .Params.updated | markdownify }}</div>
+<h2 class="text-xl font-semibold mt-6">Proposed Final Version</h2>
+<div class="bg-gray-200 p-4 rounded">{{ .Params.final | markdownify }}</div>
+<h2 class="text-xl font-semibold mt-6">Discussion</h2>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ucrp-proposed-platform.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{{ end }}
+{{ end }}

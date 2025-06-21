@@ -1,0 +1,484 @@
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Platform | Utah County Republican Party Proposed Platform</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  </head>
+  <body class="bg-gray-50 font-sans antialiased">
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><header class="fixed top-0 left-0 w-full bg-red-900 text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <a href="/" class="text-xl font-bold tracking-tight">UCRP Platform</a>
+      
+      <nav class="hidden md:flex space-x-6">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+      
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+      <nav class="flex flex-col space-y-2 px-4 py-3">
+        
+        <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
+        
+        <a href="/platform/" class="hover:text-blue-200 transition-colors">Platform</a>
+        
+        <a href="/faq/" class="hover:text-blue-200 transition-colors">FAQ</a>
+        
+      </nav>
+    </div>
+  </header>
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+    <main class="container mx-auto px-4 pt-20 pb-8 min-h-screen">
+      
+<h1 class="text-3xl font-bold mb-4">Full Platform</h1>
+<h1 class="text-3xl font-bold text-gray-800">Proposed Utah County Republican Party Platform</h1>
+<p>Proposed platform outlining our core principles and policy positions.</p>
+
+
+  
+    <h2 class="text-xl font-semibold mt-6">Preamble 
+      <span class="text-sm font-normal"><a href="/planks/preamble/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We the members of the Utah County Republican Party do hereby affirm our belief and trust in God and that it was through His intervention that this nation was established. The foundation of our platform is the knowledge that all people are created equal and that the role of government should be limited to protecting and preserving the God-given rights of life, liberty, the pursuit of happiness, and the ownership and control of property. Morality and virtue are the foundation of a republic and necessary for a society to be free. In order to identify our Party and our elected officials with certain shared values and principles, and in order to put these principles into governance, we do hereby present this platform to convention delegates and the public and invite all who share these values and principles to vote for Republican candidates. (Utah Constitution: Preamble; Article I, Sections 1, 2 &amp; 22)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Proper Role of Citizens 
+      <span class="text-sm font-normal"><a href="/planks/proper-role-of-citizens/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Individual responsibility and accountability are necessary for the government to operate within the limited powers granted by the divinely inspired Constitution of the United States of America and the Constitution of the State of Utah in keeping with the principles established by our Founding Fathers. We believe a society can only remain free when the majority of its members lead spiritually grounded and morally upright lives and are willing to participate in civic responsibilities to preserve these values. We support the “Rule of Law” and believe in upholding the law of the land. The overturning of unjust or unconstitutional laws should take legislative priority. Jury nullification is a vital check on bad legislation. (Utah Constitution:  Preamble; Article I, Sections 1 &amp; 2; Article VI, Section 28)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Proper Role of Government 
+      <span class="text-sm font-normal"><a href="/planks/proper-role-of-government/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The proper role of government at all levels is to protect each person’s unalienable rights of life, liberty and the pursuit of happiness; and each individual’s right to own and control property. Constitutional principles are everlasting and should not be subject to statutes of limitations. Any other rights or privileges should not be construed or applied in any way to infringe on our God-given unalienable rights. (Utah Constitution: Article I, Sections 1 &amp; 22; Article VI, Section 28)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Separation of Powers 
+      <span class="text-sm font-normal"><a href="/planks/separation-of-powers/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Our system is derived on the premise of separation of authority into three distinct but equal branches. Abduction or usurpation of another branch&#39;s authority is an assault on the foundations of our Republic. Power designated to each branch must stay with that branch and government should never be transferred to corporations.
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Freedom of Speech 
+      <span class="text-sm font-normal"><a href="/planks/freedom-of-speech/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Individuals have an inherent right to free speech which is foundational to a free society. Social scoring, restriction of access to services or tracking of activities based on speech must be prohibited. Personal and societal betterment comes from the robust challenge of ideas. Every individual has the right to be incorrect or distasteful in their speech: compelled speech must be prohibited. Misinformation is inevitable and must not be remedied through government. Elected officials also have an inherent right to free speech. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Sections 1 &amp; 15)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Social Media 
+      <span class="text-sm font-normal"><a href="/planks/social-media/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Social media companies are the current equivalent of the public square and outside of extreme violence or sexual content, they should have limited authority to censor. Individuals have the right to anonymity in social media spaces. Government forced presentation of credentials to participate on social media is a violation of privacy. Administrators of private groups on social media have private property rights and have the right to delete, remove, block, or censor. (Utah Constitution: Article I, Sections 7, 15 &amp; 23)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Freedom of Religion 
+      <span class="text-sm font-normal"><a href="/planks/freedom-of-religion/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> God is our supreme Sovereign, and the sole source of our rights. We must therefore, be free to worship Him in public and private. Government holds no authority to restrict public prayer or other forms of public religious expression. (Bill of Rights: 1st Amendment. Utah Constitution: Article 1, Section 4)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Right to Bear Arms 
+      <span class="text-sm font-normal"><a href="/planks/right-to-bear-arms/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The right of individuals to keep and bear arms must not be infringed. Gun ownership increases safety by allowing law-abiding citizens to protect themselves and their families. We do not support the removal, suspension, or control of this right in any way except through due process in a court of law. As a general principle, we do not support gun-free zones. (Bill of Rights: 2nd Amendment. Utah Constitution: Article I, Sections 6 &amp; 7)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Right to Data Privacy 
+      <span class="text-sm font-normal"><a href="/planks/right-to-data-privacy/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Individuals have a fundamental right to privacy and control over their data; which includes: purchases, behaviors, personally identifiable information (PII)–including DNA. Individuals should be secure in their own–and their dependents’--persons, property, and communications. PII collected by government or corporations must be used solely for its intended purpose. The scope and use of data collected by devices or programs must be transparent and subject to the owner&#39;s fully-informed consent. Individuals have rights over their data, including ownership, usage, updates, security, portability, privacy and destruction; as well as, transparency in algorithms and legal protections. Personal data is property and cannot be taken without consent: violations must have legal recourse. (Bill of Rights: 4th Amendment. Utah Constitution: Article I, Sections 7 &amp; 22. Utah Code 53G-6-803: Parental rights)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Government Use of Personal Data 
+      <span class="text-sm font-normal"><a href="/planks/government-use-of-personal-data/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We affirm privacy as a fundamental right. We acknowledge the necessity of the government to process a limited amount of personal data for essential public services. Regulation of government use of personal data is crucial and should limit types and amounts of data collected, require informed consent, provide for transparency in methods of data collection, processing, disposition and expungement, restrict data usage and sharing; and prohibit selling of personal data. We adamantly oppose unlawful government profiling or surveilling of individuals. The right to use physical identification should be guaranteed. Government processes must permit a non-tech option. (Utah Constitution: Article I, Section 7)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Surveillance and Digital Ticketing Prohibition 
+      <span class="text-sm font-normal"><a href="/planks/surveillance-and-digital-ticketing-prohibition/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Government surveillance should be restricted. Although security cameras exist to protect property, surveillance violates the right to certain privacy in public. Cameras used for electronic ticketing violate the right to face one’s accuser, the right to correction by a first offense or warning, and damages relationships with law enforcement. (Bill of Rights: 4th &amp; 6th Amendments. Utah Constitution: Article 1, Sections 7 &amp; 12)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Parental Rights 
+      <span class="text-sm font-normal"><a href="/planks/parental-rights/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Parents and legal guardians are and must be recognized as the final authority in deciding what is best for their minor children–to the exclusion of abusive behavior. Parents must receive full disclosure and give written permission for any healthcare services, outside referrals, educational testing, or communications regarding race, gender, or sexuality. A minor child’s data must never be shared with any entity–including government–without a parent’s or legal guardian’s consent. Parents and legal guardians should be able to access and audit minor children’s data without limitation. (Utah Constitution: Article I, Sections 1 &amp; 7)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Medical Freedom 
+      <span class="text-sm font-normal"><a href="/planks/medical-freedom/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> An individual’s body is the ultimate and most basic form of private property and inherently comes with the right to medical freedom including: the right to try, the right to avoid, and full disclosure. No person should be forced, coerced, or cajoled to undergo any healthcare service including vaccinations or experimental medical procedures. We support the fundamental, unalienable right of every individual to fully-informed consent in healthcare decisions. (US Constitution: 9th Amendment. Utah Constitution: Article I, Sections 1 &amp; 7)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Freedom to Travel 
+      <span class="text-sm font-normal"><a href="/planks/freedom-to-travel/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The right to travel freely–unencumbered by government regulation, tracking or reporting–is the right of every individual. Vaccination status should never prohibit the right to travel. Government, public-private partnerships, or non-governmental organizations do not have the authority to control the ability to travel or to limit modes of transportation. Vintage vehicles, gas-powered vehicles, natural gas, or other energy source vehicles are never to be prohibited. Roads and their usage are the property of all citizens and equal access to their use shall not be infringed. Public spaces for traveling and parking, in general, should not be sold to private entities or held in public-private partnerships. (Bill of Rights:10th Amendment. Utah Constitution: Article 1, Sections 1, &amp; 7)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Freedom of Assembly and Association 
+      <span class="text-sm font-normal"><a href="/planks/freedom-of-assembly-and-association/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The right to meet together in communities, of our own making and associations, in any manner for any reason shall not be infringed. (Bill of Rights: 1st Amendment)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Support of Local Government 
+      <span class="text-sm font-normal"><a href="/planks/support-of-local-government/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Local governments allow for greater community involvement and are most aware of the needs of the people. Federal regulations of state and local governments should be restricted to powers specifically enumerated in the Constitution of the United States. We uphold the principle of the lesser magistrates and when unalienable rights are infringed upon, all levels of government are responsible to protect and defend against usurpations. Local municipalities, also known as political subdivisions, should have the right to dictate their planning and zoning, business regulation, and infrastructure. (Bill of Rights: 9th Amendment. Utah Constitution: Article I, Section 1; Article VI, Section 28; Article XI, Section 6)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Accountable Government 
+      <span class="text-sm font-normal"><a href="/planks/accountable-government/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> All government officials are accountable to the people and must be receptive to petitions of redress. Any government agency or entity that receives public funds must be open to public audit and review. All levels of government should fully and swiftly comply with citizens’ requests for information (GRAMA and FOIA). Elected officials are accountable for all taxpayer money and must not delegate appropriation authority to non-elected or appointed entities. Deferments, RDAs, special interest rates, etc. are forms of governmental favoritism. Bodies, including public-private partnerships, quasi-governmental entities, Authority Districts, Independent Entities, or any districts/committees made up of elected officials and corporations, being given power over and use of government funds without having all voting members directly elected are in violation of accountable government and the Utah State Constitution. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Section 2; Article V, Section 1; Article VI, Sections 1 &amp; 28; Article XIII)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Ethics and Conflicts of Interests 
+      <span class="text-sm font-normal"><a href="/planks/ethics-and-conflicts-of-interests/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Elected officials are in violation of their public trust if they hold any position, or receive any financial or other compensation, as a lobbyist while holding public office. Personal advantages achieved through elected positions are an ethical violation and should be avoided while in office and after. Any votes that would financially benefit or provide a quid pro quo to the elected official, their direct family members, or close friends should be avoided by abstention or resignation. (Utah Constitution: Article V, Section 1; Article VI, Sections 9 &amp; 10. Utah Ethics Act: Utah Code Title 67, Section 16)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Elected Officials’ Responsibilities 
+      <span class="text-sm font-normal"><a href="/planks/elected-officials-responsibilities/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> It is the responsibility of an elected official, who holds and casts any vote, to honor their oath and do so with the utmost understanding of the consequences. Their power to vote on behalf of their constituents has been given with the highest fidelity, and proactive input on specific legislation or ordinances from constituents should be equal to or greater than other stakeholders. The default vote should always be a “No” vote. To move from a “No” vote to a “Yes” vote should be difficult and require fully reading the proposed legislation, with a clear case that the citizenry who entrusted them will benefit–and not lobbyists or special interests. It is the responsibility of a legislator to only propose and vote on single subject–and not single category–bills. Legislators should sponsor and floor sponsor as few bills as possible and should fully understand those bills. If a vote was taken in error, it is the responsibility of the elected official to correct the error and continue efforts to right the wrong until rectified. A vote in favor of legislation is tantamount to entering into a contract on your constituents behalf. Elected officials should continue their education in the principles outlined in our founding documents. Accessibility, coordination, and communication with Party leadership is both the responsibility of Party leadership and any representatives that represent constituents in all or part of Utah County. (Utah Constitution: Article VI, Sections 22, Article VIII, Section 2)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Political Parties and Membership 
+      <span class="text-sm font-normal"><a href="/planks/political-parties-and-membership/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The Utah County Republican Party is a freely-associated private Party. Political Parties have the right to hold their own primaries and determine their own method of electing nominees for the general ballot. The right to regulate and control membership and the use of the &#39;R&#39; or &#39;Rep&#39; lies with the Party and not the individual. The UCRP platform, constitution, and bylaws are the governing documents. The Utah County Republican Party has the right to possess, manage, and control its full member data. The Utah County Republican Party can remove members from the Party for cause. As per the United States Supreme Court&#39;s rulings, government holds no authority in running the internal functions or processes of a private Party. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Sections 1 &amp; 7)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Voting 
+      <span class="text-sm font-normal"><a href="/planks/voting/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The Party supports needed legislation to ensure the integrity of the voter registration rolls and to reduce voter fraud. We believe that in-person voting, with voter identification, clear regulations for chain of custody, and verifiability is best and instills the most public confidence. Accommodations for alternate paths or early voting for military, disabled, or religious missions should remain to these select groups with extenuating circumstances. Voting is how peaceful societies transfer power. Election jurisdiction should remain closest to the people. Municipal elections must remain under the jurisdiction of the local municipalities. All other elections should remain under the jurisdiction of the elected county clerk. (Utah Constitution: Article I, Sections 1 &amp; 17; Article IV, Sections 3 &amp; 8)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Fiscal Responsibility 
+      <span class="text-sm font-normal"><a href="/planks/fiscal-responsibility/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Government at all levels should be required to live within a balanced budget. Increases in government spending should not exceed inflation and population growth. The legislative auditor and state and county auditors should have the authority to audit any entity that uses or defers tax dollars. Services and scope of government should be limited to provide only for basic public needs. Dependence on federal dollars must be avoided. (Utah Constitution: Article VI, Section 33; Article XIII, Section 5)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">National Sovereignty and States’ Rights 
+      <span class="text-sm font-normal"><a href="/planks/national-sovereignty-and-states-rights/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Ours is a sovereign nation governed solely by the Constitution of the United States of America. Our government shall not relinquish its authority to foreign or world powers. The State of Utah does not have the authority to negotiate directly with foreign countries or global entities. Powers not given to the federal government are reserved to the State of Utah or its citizens. The State of Utah should reject non-governmental organization programs that are contrary to the U.S. and Utah State Constitutions. (U.S. Constitution: Article I, Sections 8 &amp; 10; Article II, Section 2, Clause 2; Article VI, Clause 2. Bill of Rights: 9th &amp; 10th Amendments. Utah Constitution: Article I, Section 3)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">National Defense 
+      <span class="text-sm font-normal"><a href="/planks/national-defense/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We affirm the principles of peace through strength and call for the rebuilding of our armed services to defend our nation. The United States of America should only be involved in armed conflicts when there is a clear and present threat to our safety or vital national interest. It is the right of the United States Congress alone to declare war. It is the right of every citizen to be a conscientious objector for any reason. (U.S. Constitution: Preamble; Article I, Section 8, Clauses 11, 12, &amp; 13. Bill of Rights: 1st &amp; 2nd Amendments; Utah Constitution: Article 1, Section 4)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Proper Form of Government 
+      <span class="text-sm font-normal"><a href="/planks/proper-form-of-government/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The United States of America is a Compound Constitutional Republic based on the rule of law, representatives elected by sovereign citizens to exercise authority on their behalf, and a system of internal and external checks and balances. The Utah caucus system is in alignment with representative government and guards against the dangers inherent in direct democracies. Political Parties have the right to select their nominees through their own processes: we oppose any efforts to subvert these rights. (Bill of Rights: 1st Amendment. Utah Constitution: Article I, Sections 1 &amp; 2; Article VI, Section 1)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Education 
+      <span class="text-sm font-normal"><a href="/planks/education/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> A well-educated and informed citizenry is essential to the long-term well-being of a free society. The primary responsibility for education rests with the student and the family. Parents have the right to choose whether a child is educated in private, public, or home schools, and government must not infringe on that right. To promote excellence, consumer choice in education should be encouraged. Schools or other government entities should not invade the privacy of parents or their children. We favor local accountability and control in all aspects of the education system. Public schools should abstain from teaching promiscuity, favoring any group over another, or providing pornography in any form. Public education’s sole imperative is to educate. Social and welfare functions are not the responsibility of the education system. Any educational ideology that is subversive or destructive to our Constitutional Republic must be ended immediately. (Utah Constitution: Article I, Section 3; Article X, Sections 1,2,3 &amp; 8. Utah Code 53G-6-803: Parental Rights)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Higher Education 
+      <span class="text-sm font-normal"><a href="/planks/higher-education/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Higher education institutions should be self-sufficient and provide degrees of value that enrich the community. Any school receiving taxpayer funds must not promote agendas contrary to our Constitutional Republic. Government has no place in scaling credentialing programs or certifications. All educational certificates and higher education degrees should be kept under the jurisdiction of the educational institution. Any centralized, government or affiliated program that requires certification or credentialing–one time or ongoing–is inappropriate and prohibited. (Utah Constitution: Article X, Sections 1,2,3 &amp; 4)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Economy 
+      <span class="text-sm font-normal"><a href="/planks/economy/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The proper role of government in economic development is to create an environment for all businesses in which free enterprise, investment and risk-taking can thrive. Government&#39;s economic role is to enforce a level playing field and not to create monopolies or provide advantage for some and exclude others. In order to create such an environment, we believe the following principles: (Utah Constitution: Article I, Sections 2 &amp; 24;  Article VI, Section 28; Article XII, Section 20)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Economic Development 
+      <span class="text-sm font-normal"><a href="/planks/economic-development/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Utah’s economic growth should be sustained through the principles of free enterprise. Government should not make available special interest rates, or contracts without expiration. Long term beneficial relationships between government and private corporations– that subvert the protections inherent in both–are in violation of the Utah State Constitution which ensures that government exists for the people’s equal protection and benefit. (Utah Constitution: Article I, Sections 2, 7 &amp; 23;  Article VI, Section 28; Article XII, Section 20)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Regulation 
+      <span class="text-sm font-normal"><a href="/planks/regulation/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We oppose excessive and restrictive government regulation. Regulation should be minimized, or eliminated, unless a convincing case can be made that the collective good is clearly improved by such regulation. Regular review of regulatory goals is necessary to ensure their effectiveness. (Utah Constitution: Article I, Sections 1 &amp; 24)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Taxation and Debt 
+      <span class="text-sm font-normal"><a href="/planks/taxation-and-debt/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Taxation should be as fair, equitable, simple, and minimal as possible. Limited government dictates that taxpayers should keep as much of their money as possible instead of giving it to government. Direct taxation should be avoided, and taxation without representation is prohibited. Property and estate taxes are an assault on the American Dream and should be eliminated and individuals should be able to own, and/or pass to their heirs, their property without the threat of tax debt confiscation. Property liens should be prohibited for unrelated debt, and never for medical debt. (Utah Constitution: Article I, Sections 1,2,7 &amp; 22; Article XIII, Sections 2 &amp; 3)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Infrastructure 
+      <span class="text-sm font-normal"><a href="/planks/infrastructure/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Infrastructure should be publicly owned and accessible, and projections should be made conservatively and responsibly. (Utah Constitution: Article I, Section 2; Article VI, Section 28; Article XI, Section 5)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Housing Jurisdiction 
+      <span class="text-sm font-normal"><a href="/planks/housing-jurisdiction/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Local municipalities, and not federal, state, or county, should have jurisdiction over planning and zoning, and the market–kept fair and open–should dictate pricing. Government driven high density mandates undermine consumer preferences, oversimplify complicated market variables, restrict individual and municipal freedom, and perpetuate housing issues. (Utah State Constitution: Article I, Sections 1 &amp; 22)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Consumer Rights 
+      <span class="text-sm font-normal"><a href="/planks/consumer-rights/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Protecting consumer rights requires that government maintain a fair marketplace by ensuring public accessibility as well as ensuring the ability for consumers to use cash or other payment methods for all transactions. Government should allow consumers the right to repair and modify their own property, supporting the American Dream of self-sufficiency and personal freedom. (Utah Constitution: Article XII, Section 20)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Corporate Personhood 
+      <span class="text-sm font-normal"><a href="/planks/corporate-personhood/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> While we support the traditional legal protections granted to corporations, we do not believe in, nor support, the concept of corporate personhood. The inherent flaws being that individuals and corporations have the same legal rights and privileges, the allowing of an individual to multiply their representation unfairly through investments, and foreigners gaining access to our system. All rights are granted through the individual. (Utah Constitution: Article I, Sections 1 &amp; 2)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Asset Forfeiture and Eminent Domain 
+      <span class="text-sm font-normal"><a href="/planks/asset-forfeiture-and-eminent-domain/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Do not steal–even government. If government must take property for “essential” needs, compensation should be generous and the legal proceedings should be with the highest fidelity. (Bill of Rights: 4th &amp; 5th Amendments. Utah Constitution: Article 1, Sections 7, 14 &amp; 22)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Energy and Environment 
+      <span class="text-sm font-normal"><a href="/planks/energy-and-environment/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> There must be a balance between the economic benefits of growth and a healthy environment. Market forces and quality of life should be considered when managing environmental issues. Societal participation based on individual environmental impacts must be prohibited. We believe in informed and dispassionate discussions on the scientific processes including empirical, measurable, and objective facts that influence complex public policy. We do not support energy policies based on political trends and propagandized environmental language for corporate advantages or global agendas. (Utah Constitution: Article I, Sections 1 &amp; 7; Article VI, Section 28)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Land, Natural Resources, and Water 
+      <span class="text-sm font-normal"><a href="/planks/land-natural-resources-and-water/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> State and local governments have the responsibility to protect land, natural resources, and water from global, federal or conservation acquisitions or partnerships in perpetuity; and to use them for the betterment of the citizenry. (Utah Constitution: Article XVII, Section 1; Article XVIII, Section 1; Article XX, Section 1)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Law Enforcement and Justice 
+      <span class="text-sm font-normal"><a href="/planks/law-enforcement-and-justice/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Law enforcement agencies and the judiciary should strictly uphold the law in the exercise of their duties and work with citizens to maintain safe communities. The federal and state constitutions supersede all laws and it is the responsibility of these agencies to fully know and understand these documents. Constitutional examinations for law enforcement, appointed judges, and federal and local legislators should be required. (Utah Constitution: Article I, Sections 2, &amp; 26; Article 4, Section 10)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Crime Prevention 
+      <span class="text-sm font-normal"><a href="/planks/crime-prevention/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The primary defense against crime is stable and responsible family life emphasizing personal accountability and respect for the law. Swift and certain punishments with just and appropriate penalties are essential deterrents to crime. Prosecution of political enemies or excessive punishments due to the political nature of a crime should never occur. For first time, nonviolent offenders, alternatives to incarceration provide cost-effective solutions that uphold personal responsibility using limited government intervention. Post incarceration; families, friends, and communities that support reintegration help to reduce recidivism. (Utah Constitution: Article I, Sections 1, 7, 8 &amp; 12)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Victims’ Rights 
+      <span class="text-sm font-normal"><a href="/planks/victims-rights/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Victims’ rights are always superior to convicted criminals&#39; rights. Victims’ right of restitution should be required of criminals. (Utah Constitution: Article I, Sections 7 &amp; 12)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Judicial System 
+      <span class="text-sm font-normal"><a href="/planks/judicial-system/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Each individual is entitled to a trial by jury in both criminal and civil cases. It is the duty of juries to rule on the law as well as the facts of a case. We call upon the judiciary to reestablish this process and to inform juries of this duty. State senators must hold thorough hearings for all judicial nominees, and members of the Judiciary should undergo regular reviews. The results of such reviews should be a matter of public record. We support the appointment of judges who respect traditional family values and the sanctity of human life. Judges should not make statute but apply it. (Utah Constitution: Article I, Sections 10 &amp; 12)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Juvenile Crime 
+      <span class="text-sm font-normal"><a href="/planks/juvenile-crime/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Juveniles who are charged with a serious violent crime should be tried as adults, acknowledging that in some instances the judicial system must use discretion when dealing with young offenders. (Utah Constitution: Article I, Sections 7 &amp; 9)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Precedent 
+      <span class="text-sm font-normal"><a href="/planks/precedent/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Precedent is not the law of the land but a tool in constitutional evaluation. Legislation from the bench in the form of precedent can re-establish both good and bad rulings. Precedent can be seen as a method of removing the foundational principle of a fair trial. (Bill of Rights: 6th Amendment. Utah Constitution: Article I, Sections 7 &amp; 12)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Family 
+      <span class="text-sm font-normal"><a href="/planks/family/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> The family is the fundamental unit of a healthy society. Parents have the right to bear children (or otherwise add children to their families), to determine their own family size, and to determine what is in their best interest without interference from government. We encourage all efforts to strengthen the moral character of our children and oppose policies, practices, and public expressions that degrade humanity and the sanctity of family relationships. We oppose efforts to include sexual orientation as a protected class. Although outliers occur and outcomes vary, traditional roles are the societal ideal in the rearing of children. (U.S. Constitution: Preamble. Utah Constitution: Article I, Section 1)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Protection of Human Life 
+      <span class="text-sm font-normal"><a href="/planks/protection-of-human-life/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We affirm the fundamental, unalienable right to life for both the born and the unborn. We oppose using public funds for abortion or to support any organizations that promote abortion. Abortion should be illegal except where the life of the mother is at serious risk, or the pregnancy is the result of rape or incest. All people should be protected from abuse and exploitation. (Utah Constitution: Article I, Sections 1, 4, &amp; 9)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Personal Agency and Accountability 
+      <span class="text-sm font-normal"><a href="/planks/personal-agency-and-accountability/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Individuals have the primary responsibility for their own welfare. Family, church, and private organizations should provide secondary support when needed. The focus of assistance programs should be the development of self-reliance. (Utah Constitution: Article I, Section 1)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Food Rights 
+      <span class="text-sm font-normal"><a href="/planks/food-rights/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Individuals have the right to plant, grow, raise, and maintain food production on their private property. Seeds legally bought that naturally cross-pollinate are not a violation of patents and no legal action should be taken against gardeners or farmers. Individuals have a right to know the ingredients in their food: labeling and public information should include all ingredients. Food and water should be as natural as possible. (Utah Constitution: Preamble; Article 1, Section 1; Article XVII, Section 1)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Gambling 
+      <span class="text-sm font-normal"><a href="/planks/gambling/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We oppose all efforts to legalize gambling in any form. (Utah Constitution: Article I, Section 27)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Pornography 
+      <span class="text-sm font-normal"><a href="/planks/pornography/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Pornography is destructive to the individual, family, and the community. We support the vigorous prosecution of those who create, distribute, or promote pornographic materials, especially in connection with children. Local communities have the right to establish moral and ethical standards. (U.S. Constitution: Preamble)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Immigration 
+      <span class="text-sm font-normal"><a href="/planks/immigration/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> We support an immigration system that is safe, orderly and humane, and protects our national security. We support the Constitutional mandate for the federal government to protect and secure our national borders from illegal immigration and enforce current immigration laws. We oppose the use of taxpayer funds to provide benefits for illegal immigrants. All immigration should be for the benefit and well-being of the citizenry. We also welcome immigrants who enter America through legal avenues. America is a stronger and better nation because of immigrants’ hard work, entrepreneurial spirit, pursuit of the American Dream, and support of our Constitutional Republic. (U.S. Constitution: Article IV, Section 4. Utah Constitution: Article 1, Section 3)
+  </li>
+  
+    <h2 class="text-xl font-semibold mt-6">Social Security 
+      <span class="text-sm font-normal"><a href="/planks/social-security/" class="text-blue-600 hover:underline">See Changes</a></span></h2>
+    </h2> Social Security, Medicare, and Medicaid have become entitlements far beyond the minimal safety net they were intended to be. We call for urgent and significant entitlement reform which returns to the principles of free-market choice and financial self-reliance. All Republican elected officials, candidates and party officers are expected to endorse these principles and agree to be held accountable to the people and to the party. (Utah State Constitution: Article I, Section 2; Article VI, Section 1; Article VIII, Section 2)
+  </li>
+  
+
+
+
+
+    </main>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); 
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><footer class="bg-gray-800 text-white py-4 text-center">
+    <div class="container mx-auto px-4">
+      <p>© 2025 Utah County Republican Party</p>
+    </div>
+  </footer>
+  </body>
+  </html>
