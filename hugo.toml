@@ -23,3 +23,6 @@ disqusShortname = "ucrp-platform" # Replace with your Disqus shortname
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
